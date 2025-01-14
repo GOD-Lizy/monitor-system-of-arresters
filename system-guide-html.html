@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="青海果洛避雷器智能监测系统使用指南">
+    <!-- 优化字体渲染 -->
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+    </style>
+    <title>避雷器智能监测系统使用指南</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* 高清显示优化 */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .svg-icon {
+                transform: scale(0.5);
+                transform-origin: center;
+            }
+        }
+        
+        /* 基础样式优化 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+        }
+        
+        .card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+        
+        svg {
+            shape-rendering: geometricPrecision;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-6 text-center">青海果洛避雷器智能监测系统使用指南</h1>
+        
+        <div class="grid grid-cols-5 gap-2 mb-8">
+            <button class="tab active p-2 rounded flex items-center justify-center gap-2" data-tab="login">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+                登录指南
+            </button>
+            <button class="tab p-2 rounded flex items-center justify-center gap-2" data-tab="fault">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M6 18l4-4h4l4-4"/><path d="M6 10l4 4"/></svg>
+                故障分析
+            </button>
+            <button class="tab p-2 rounded flex items-center justify-center gap-2" data-tab="thermal">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M8 4v16M16 4v16"/></svg>
+                红外监测
+            </button>
+            <button class="tab p-2 rounded flex items-center justify-center gap-2" data-tab="ground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                接地监测
+            </button>
+            <button class="tab p-2 rounded flex items-center justify-center gap-2" data-tab="status">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4M6 12H2M12 6V2M12 22v-4M20 16l-4-4M8 8L4 4M20 8l-4 4M8 16l-4 4"/></svg>
+                综合状态
+            </button>
+        </div>
+
+        <div id="login" class="tab-content active">
+            <div class="bg-white rounded-lg shadow-sm mb-4 card transform transition-all duration-300">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-6 h-6 mr-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+                        <h3 class="text-lg font-semibold">系统登录指南</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-600">
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>访问系统登录页面，输入您的工号</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>输入密码（至少8位，包含字母和数字）</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>如果是首次使用，点击"创建新账号"进行注册</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>注册时使用青海果洛地区工号进行注册</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>如遇问题，可联系技术支持：support@state-grid.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fault" class="tab-content">
+            <div class="bg-white rounded-lg shadow-sm mb-4">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-6 h-6 mr-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M6 18l4-4h4l4-4"/><path d="M6 10l4 4"/></svg>
+                        <h3 class="text-lg font-semibold">避雷器故障分析界面</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-600">
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>查看A/B/C/备用避雷器的实时状态</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>监测状态趋势图显示各相避雷器的运行状况</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>查看详细分析报告，包括绝缘电阻、泄漏电流等参数</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>注意关注状态分布图中的异常指标</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="thermal" class="tab-content">
+            <div class="bg-white rounded-lg shadow-sm mb-4">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-6 h-6 mr-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M8 4v16M16 4v16"/></svg>
+                        <h3 class="text-lg font-semibold">红外故障检测界面</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-600">
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>实时监测各相避雷器温度数据</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>查看可见光和红外热成像图</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>温度异常时（如超过75°C）系统会自动报警</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>查看温度分布分析和历史趋势图</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ground" class="tab-content">
+            <div class="bg-white rounded-lg shadow-sm mb-4">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-6 h-6 mr-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <h3 class="text-lg font-semibold">接地故障监测界面</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-600">
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>监测环境温度、接地电流和接地电压</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>查看可见光/红外图像监测结果</p>
+                        <p class="flex items-center"><svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-
